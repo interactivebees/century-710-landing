@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --primary: 0 75% 55%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 24 9.8% 10%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --accent: 60 4.8% 95.9%;
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --ring: 0 75% 55%;
+  --radius: 0.5rem;
+  
+  /* Century Ply Red Brand Colors */
+  --century-red: 0 75% 55%;
+  --century-red-dark: 0 75% 45%;
+  --century-red-light: 0 75% 65%;
+  --century-accent: 15 85% 55%;
+  --century-dark: 0 0% 15%;
+  --century-light: 0 0% 98%;
+  --century-gray: 0 0% 45%;
+}
+
+.dark {
+  --background: 20 14.3% 4.1%;
+  --foreground: 60 9.1% 97.8%;
+  --card: 20 14.3% 4.1%;
+  --card-foreground: 60 9.1% 97.8%;
+  --popover: 20 14.3% 4.1%;
+  --popover-foreground: 60 9.1% 97.8%;
+  --primary: 0 75% 65%;
+  --primary-foreground: 0 0% 15%;
+  --secondary: 12 6.5% 15.1%;
+  --secondary-foreground: 60 9.1% 97.8%;
+  --muted: 12 6.5% 15.1%;
+  --muted-foreground: 24 5.4% 63.9%;
+  --accent: 12 6.5% 15.1%;
+  --accent-foreground: 60 9.1% 97.8%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --border: 12 6.5% 15.1%;
+  --input: 12 6.5% 15.1%;
+  --ring: 0 75% 65%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  h1 {
+    @apply text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl;
+  }
+  h2 {
+    @apply text-2xl font-bold leading-tight tracking-tight md:text-3xl;
+  }
+  h3 {
+    @apply text-xl font-semibold leading-tight md:text-2xl;
+  }
+  h4 {
+    @apply text-lg font-semibold leading-normal;
+  }
+  h5 {
+    @apply text-base font-semibold leading-normal;
+  }
+  p {
+    @apply text-base leading-relaxed;
+  }
+  .text-century-red {
+    color: hsl(var(--century-red));
+  }
+  .text-century-red-dark {
+    color: hsl(var(--century-red-dark));
+  }
+  .text-century-red-light {
+    color: hsl(var(--century-red-light));
+  }
+  .text-century-accent {
+    color: hsl(var(--century-accent));
+  }
+  .bg-century-red {
+    background-color: hsl(var(--century-red));
+  }
+  .bg-century-red-dark {
+    background-color: hsl(var(--century-red-dark));
+  }
+  .bg-century-red-light {
+    background-color: hsl(var(--century-red-light));
+  }
+  .bg-century-accent {
+    background-color: hsl(var(--century-accent));
+  }
+  .bg-century-dark {
+    background-color: hsl(var(--century-dark));
+  }
+  .bg-century-light {
+    background-color: hsl(var(--century-light));
+  }
+  .border-century-red {
+    border-color: hsl(var(--century-red));
+  }
+  .hover\:bg-century-red-dark:hover {
+    background-color: hsl(var(--century-red-dark));
+  }
+  
+  /* Floating Actions Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes ripple {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(2.4); opacity: 0; }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-ripple {
+    animation: ripple 1.5s ease-out infinite;
+  }
+}
